@@ -16,4 +16,4 @@ mongoose.connect(config.db, {
     console.log("Servidor corriendo correctamente en el puerto localhost:"+port);
   });
 })
-.catch(err => console.log(err))
+.catch(err => console.log(err));

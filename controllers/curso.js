@@ -14,7 +14,7 @@ const controller = {
             });
             curso.save((err,cursoSaved) => {
                 if(err) res.status(500).send({ message:`Error al crear el curso ${err}`});
-                return res.status(200).send({ curso: cursoSaved});
+                return res.status(201).send({ curso: cursoSaved});
             });
 
         }catch(error){
@@ -86,7 +86,7 @@ const controller = {
             Curso.findByIdAndUpdate(_id,update,{new:true},(err,data) => {
                 if(err) return res.status(500).send({message:"Error al actualizar"});
                 if(!data) return res.status(404).send({message:"No se encontró el Curso a actualizar"});
-                res.status(200).send({
+                res.status(201).send({
                     curso: data
                 });
             });
